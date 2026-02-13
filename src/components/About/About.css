@@ -1,0 +1,86 @@
+.about-section {
+  background: linear-gradient(180deg, #1c1c1c, #000);
+  padding: 120px 80px;
+}
+
+.about-section .container {
+  max-width: 1150px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .about-section {
+    padding: 80px 30px;
+  }
+}
+
+.text-orange {
+  color: #ff6a00;
+}
+
+.about-subtitle {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #aaa;
+}
+
+/* About Accordion  */
+.accordion {
+  background: transparent;
+}
+
+.accordion-item {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.accordion-button {
+  background: transparent;
+  color: white;
+  font-weight: 600;
+  font-size: 22px;
+  padding: 20px 0;
+  box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: transparent;
+  color: white;
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-button::after {
+  filter: invert(1);
+}
+
+.accordion-body {
+  color: rgba(255,255,255,0.75);
+  font-size: 16px;
+  padding: 0 0 20px 0;
+  line-height: 1.7;
+}
+
+.values-section {
+  background: #f8f8f8;
+}
+
+.value-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+}
+
+.value-icon {
+  font-size: 30px;
+  color: #ff6a00;
+}

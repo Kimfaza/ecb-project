@@ -1,0 +1,62 @@
+.company-section {
+  background: #f5f5f5;
+  overflow: hidden;
+}
+
+.company-text {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #000;
+}
+
+/* .company-logo {
+  max-width: 120px;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.company-logo:hover {
+  opacity: 1;
+  transform: scale(1.05);
+} */
+
+/* ===== SLIDER ===== */
+
+.logo-slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.logo-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 25s linear infinite;
+}
+
+.logo-item {
+  flex: 0 0 auto;
+  padding: 0 40px;
+}
+
+.logo-item img {
+  height: 70px;
+  object-fit: contain;
+  opacity: 0.7;
+  transition: 0.3s ease;
+}
+
+.logo-item img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

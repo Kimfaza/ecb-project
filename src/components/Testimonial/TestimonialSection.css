@@ -1,0 +1,91 @@
+.testimonial-wrapper {
+  background: #f3f3f3;
+  padding-top: 100px;
+  padding-bottom: 0;
+}
+
+/* ===================== */
+/* OVERLAP STEPS SECTION */
+/* ===================== */
+
+.steps-wrapper {
+  position: relative;
+  z-index: 3;
+  margin-bottom: -20px; 
+}
+
+.steps-card {
+  background: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.small-title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* STEP ITEM */
+.step-item {
+  border-radius: 20px;
+}
+
+.step-number {
+  font-size: 60px;
+  font-weight: 800;
+  opacity: 0.4;
+  min-width: 90px;
+}
+
+.step-orange {
+  background: #f15a00;
+}
+
+.step-light {
+  background: #f0f0f0;
+}
+
+.step-dark {
+  background: linear-gradient(90deg, #222, #333);
+}
+
+/* ===================== */
+/* CUSTOMER SECTION */
+/* ===================== */
+
+.customers-section {
+  position: relative;
+  z-index: 1;
+  padding-top: 200px; 
+  background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+    url("https://images.unsplash.com/photo-1519389950473-47ba0277781c");
+  background-size: cover;
+  background-position: center;
+}
+
+.text-orange {
+  color: #f15a00;
+}
+
+.nav-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #f15a00;
+  background: transparent;
+  color: #f15a00;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: #f15a00;
+  color: #fff;
+}
+
+.testimonial-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}

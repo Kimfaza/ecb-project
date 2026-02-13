@@ -1,0 +1,25 @@
+.navbar {
+  background-color: #000;
+}
+
+.nav-link {
+  color: #000 !important;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #ff6b00 !important;
+}
+
+.contact-btn {
+  background-color: #222;
+  color: orangered !important;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  background-color: #ff6b00;
+  color: black !important;
+}
