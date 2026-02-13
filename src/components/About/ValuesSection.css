@@ -78,3 +78,33 @@
   background: #ff6a00;
 }
 
+/* Slider */
+.slider-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 25%; /* 100% / 4 */
+  padding: 10px;
+}
+
+.value-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+
+@media (max-width: 992px) {
+  .slide {
+    flex: 0 0 50%; /* 2 kotak */
+  }
+}
+

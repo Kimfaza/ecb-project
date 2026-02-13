@@ -36,32 +36,73 @@ function ServicesSection() {
       text: "Using outbound marketing to increase sales with the help of outside expertise.",
     },
 
+    {
+      icon: <FaUsers size={40} />,
+      title: "B2C Outbound Marketing",
+      text: "Using outbound marketing to increase sales with the help of outside expertise.",
+    },
+    {
+      icon: <FaUsers size={40} />,
+      title: "B2C Outbound Marketing",
+      text: "Using outbound marketing to increase sales with the help of outside expertise.",
+    },
+    {
+      icon: <FaUsers size={40} />,
+      title: "B2C Outbound Marketing",
+      text: "Using outbound marketing to increase sales with the help of outside expertise.",
+    },
+    {
+      icon: <FaUsers size={40} />,
+      title: "B2C Outbound Marketing",
+      text: "Using outbound marketing to increase sales with the help of outside expertise.",
+    },
+
   ];
 
+  const [visibleItems, setVisibleItems] = useState(3);
   const total = services.length;
   const [current, setCurrent] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) =>
-        prev === total - 1 ? 0 : prev + 1
-      );
-    }, 4000);
+// RESPONSIVE BREAKPOINT
+useEffect(() => {
+  const handleResize = () => {
+    if (window.innerWidth < 768) {
+      setVisibleItems(1); // HP
+    } else if (window.innerWidth < 992) {
+      setVisibleItems(2); // Tablet
+    } else {
+      setVisibleItems(3); // Desktop
+    }
+  };
 
-    return () => clearInterval(interval);
-  }, [total]);
+  handleResize();
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
+
+  // AUTO SLIDE
+  useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrent((prev) =>
+      prev >= total - visibleItems ? 0 : prev + 1
+    );
+  }, 3000);
+
+  return () => clearInterval(interval);
+}, [total, visibleItems]);
 
   const nextSlide = () => {
     setCurrent((prev) =>
-      prev === total - 1 ? 0 : prev + 1
+      prev >= total - visibleItems ? 0 : prev + 1
     );
   };
 
   const prevSlide = () => {
     setCurrent((prev) =>
-      prev === 0 ? total - 1 : prev - 1
+      prev === 0 ? total - visibleItems : prev - 1
     );
   };
+
 
   return (
     <section id="service" className="services-section py-5 text-center">
@@ -86,11 +127,12 @@ function ServicesSection() {
           <div
             className="slider-track"
             style={{
-              transform: `translateX(-${current * 33.333}%)`,
+              transform: `translateX(-${current * (100 / visibleItems)}%)`,
+              transition: "transform 0.5s ease",
             }}
           >
             {services.map((service, index) => (
-              <div className="slide" key={index}>
+              <div className="slide" key={index} style={{ flex: `0 0 ${100 / visibleItems}%` }}>
                 <div className="service-card">
                   <div className="service-icon">{service.icon}</div>
                   <h5>{service.title}</h5>
@@ -121,7 +163,6 @@ function ServicesSection() {
             →
           </button>
         </div>
-
 
       </div>
     </section>

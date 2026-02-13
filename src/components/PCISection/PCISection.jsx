@@ -1,15 +1,37 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./PCISection.css";
 import certifiedImg from "../../assets/logo-certified.avif";
 
 function PCISection() {
+
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+
   return (
-    <section className="pci-section">
+    <section ref={sectionRef} className={`pci-section ${isVisible ? "show" : ""}`}>
       <div className="container">
         <div className="row align-items-center">
 
           {/* LEFT SIDE */}
-          <div className="col-lg-6 text-white">
+          <div className={`col-lg-6 text-white fade-left ${isVisible ? "active" : ""}`}>
             <p className="fw-bold">PCI Level 1 Call Center</p>
 
             <h2 className="pci-title">
@@ -34,7 +56,7 @@ function PCISection() {
           </div>
 
           {/* RIGHT SIDE CARD */}
-          <div className="col-lg-6 mt-5 mt-lg-0">
+          <div className={`col-lg-6 mt-5 mt-lg-0 fade-right ${isVisible ? "active" : ""}`}>
             <div className="pci-card">
               <div className="pci-badge">
                 <img src={certifiedImg} alt="Certified" />

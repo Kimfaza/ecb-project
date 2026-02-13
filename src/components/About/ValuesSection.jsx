@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./ValuesSection.css";
-import { FaBullseye, FaThumbsUp } from "react-icons/fa";
+import { FaBullseye, FaThumbsUp, FaGem, FaHandshake, FaStar } from "react-icons/fa";
 import { GiGearHammer } from "react-icons/gi";
 import { MdOutlinePriorityHigh } from "react-icons/md";
 
@@ -26,12 +26,77 @@ function ValuesSection() {
       title: "Being Positive",
       active: true,
     },
+    {
+      icon: <FaGem size={70} />,
+      title: "Conducting worthwhile work",
+      active: true,
+    },
+    {
+      icon: <FaHandshake size={70} />,
+      title: "Being easy to work with",
+      active: true,
+    },
+    {
+      icon: <FaStar size={70} />,
+      title: "Quality",
+      active: true,
+    },
   ];
 
+  const total = values.length;
+  const visibleItems = 4; 
+
+  // clone depan & belakang
+  const extended = [
+    ...values.slice(-visibleItems),
+    ...values,
+    ...values.slice(0, visibleItems),
+  ];
+
+  const [current, setCurrent] = useState(visibleItems);
+  const trackRef = useRef();
+
+  // Auto Slide
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => prev + 1);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // HANDLE INFINITE RESET
+  useEffect(() => {
+    if (current === total + visibleItems) {
+      setTimeout(() => {
+        trackRef.current.style.transition = "none";
+        setCurrent(visibleItems);
+      }, 500);
+    }
+
+    if (current === 0) {
+      setTimeout(() => {
+        trackRef.current.style.transition = "none";
+        setCurrent(total);
+      }, 500);
+    }
+  }, [current, total, visibleItems]);
+
+const nextSlide = () => {
+  setCurrent((prev) =>
+    prev >= total - visibleItems ? 0 : prev + 1
+  );
+};
+
+const prevSlide = () => {
+  setCurrent((prev) =>
+    prev === 0 ? total - visibleItems : prev - 1
+  );
+};
 
   return (
-    <section className="values-section py-5">
-      <div className="container text-center">
+    <section id="values" className="values-section py-5 text-center">
+      <div className="container">
         <p className="fw-bold">WHAT WE ACHIEVE</p>
 
         <h2 className="values-title">
@@ -45,35 +110,43 @@ function ValuesSection() {
         </p>
 
         {/* CAROUSEL */}
-        <div className="row mt-5">
-          {values.map((value, index) => (
-            <div className="col-lg-3 col-md-6 mb-4" key={index}>
-              <div className="value-card p-4 animate">
-                <div
-                  className={`value-icon ${
-                    value.active ? "active-icon" : ""
-                  }`}
-                >
-                  {value.icon}
+        <div className="slider-container mt-5">
+          <div
+            className="slider-track"
+            style={{
+              transform: `translateX(-${current * (100 / visibleItems)}%)`,
+              transition: "transform 0.5s ease",
+            }}
+          >
+            {extended.map((value, index) => (
+              <div className="slide" style={{ flex: `0 0 ${100 / visibleItems}%` }} key={index}>
+                <div className="value-card">
+                  <div className="value-icon">{value.icon}</div>
+                  <h5 className="mt-3">{value.title}</h5>
+                  <p>{value.text}</p>
                 </div>
-                <h5>{value.title}</h5>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         {/* Navigation */}
         <div className="values-nav mt-4">
-          <button className="nav-btn">←</button>
-          <div className="dots">
-            <span className="dot active"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
+          <button className="nav-btn" onClick={prevSlide}>←</button>
+
+          <div className="dots d-flex gap-2">
+            {values.map((_, index) => (
+              <span
+                key={index}
+                className={`dot ${current === index ? "active" : ""}`}
+                onClick={() => setCurrent(index)}
+              ></span>
+            ))}
           </div>
-          <button className="nav-btn">→</button>
+
+          <button className="nav-btn" onClick={nextSlide}>→</button>
         </div>
+
       </div>
     </section>
   );
