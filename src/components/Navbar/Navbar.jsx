@@ -5,7 +5,7 @@ import logo from "../../assets/navbar.png";
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light py-3 shadow-sm">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light py-3 shadow-sm fixed-top">
       <div className="container">
 
         {/* LOGO */}
@@ -30,7 +30,7 @@ function Navbar() {
         </button>
 
         {/* MENU */}
-        <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <div id="navbarNav" className="collapse navbar-collapse justify-content-end">
           <ul className="navbar-nav align-items-center">
 
             <li className="nav-item mx-3">
@@ -46,7 +46,7 @@ function Navbar() {
             </li>
 
             <li className="nav-item ms-3">
-              <a className="btn contact-btn px-4 py-2" href="#">
+              <a className="btn contact-btn px-4 py-2" href="#contact">
                 Contact Us
               </a>
             </li>

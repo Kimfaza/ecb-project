@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function Contact() {
   return (
-    <section className="py-5 bg-light">
+    <section id="contact" className="py-5 bg-light">
       <div className="container">
         <div className="row g-4">
 
