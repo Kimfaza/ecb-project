@@ -14,7 +14,7 @@ function ValuesSection() {
     {
       icon: <GiGearHammer size={70} />,
       title: "Service",
-    //   active: true,
+      active: true,
     },
     {
       icon: <FaBullseye size={70} />,
@@ -62,7 +62,7 @@ function ValuesSection() {
           ))}
         </div>
 
-        {/* Navigation (Dummy UI) */}
+        {/* Navigation */}
         <div className="values-nav mt-4">
           <button className="nav-btn">←</button>
           <div className="dots">

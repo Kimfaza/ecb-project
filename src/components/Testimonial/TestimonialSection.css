@@ -4,10 +4,7 @@
   padding-bottom: 0;
 }
 
-/* ===================== */
-/* OVERLAP STEPS SECTION */
-/* ===================== */
-
+/* ================= OVERLAP STEPS SECTION ================= */
 .steps-wrapper {
   position: relative;
   z-index: 3;
@@ -50,10 +47,7 @@
   background: linear-gradient(90deg, #222, #333);
 }
 
-/* ===================== */
-/* CUSTOMER SECTION */
-/* ===================== */
-
+/* ================= CUSTOMER SECTION ================= */
 .customers-section {
   position: relative;
   z-index: 1;

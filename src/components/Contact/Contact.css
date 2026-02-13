@@ -1,0 +1,9 @@
+.contact-info {
+  margin-top: 550px;   /* bikin turun ke bawah */
+  margin-bottom: 0;
+}
+
+.contact-icon {
+  color: #ff6600;      /* warna orange */
+  font-size: 18px;
+}

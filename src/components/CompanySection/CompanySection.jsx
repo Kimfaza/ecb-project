@@ -24,7 +24,7 @@ function CompanySection() {
         {/* SLIDER */}
         <div className="logo-slider mt-5">
           <div className="logo-track">
-            {/* Duplicate logos biar infinite smooth */}
+            {/* Duplicate logo agar infinite smooth */}
             {[...logos, ...logos].map((logo, index) => (
               <div className="logo-item" key={index}>
                 <img src={logo} alt={`partner-${index}`} />

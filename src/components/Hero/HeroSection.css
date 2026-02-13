@@ -1,10 +1,9 @@
 .hero {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   position: relative;
 }
 
 /* ================= HERO TOP ================= */
-
 .hero-top {
   position: relative;
   min-height: 95vh;
@@ -19,11 +18,7 @@
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.85),
-    rgba(0, 0, 0, 0.4)
-  );
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4));
 }
 
 .hero-content {
@@ -50,12 +45,11 @@
 }
 
 /* ================= CARD SECTION ================= */
-
 .hero {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   position: relative;
   background-color: #1c1c1c;
-  padding-bottom: 20px;    
+  padding-bottom: 20px;
 }
 
 .hero-card {
@@ -109,16 +103,21 @@
 }
 
 /* ================= ANIMATION ================= */
-
 .fade-up {
   opacity: 0;
   transform: translateY(30px);
   animation: fadeUp 0.8s ease forwards;
 }
 
-.delay-1 { animation-delay: 0.3s; }
-.delay-2 { animation-delay: 0.6s; }
-.delay-3 { animation-delay: 0.9s; }
+.delay-1 {
+  animation-delay: 0.3s;
+}
+.delay-2 {
+  animation-delay: 0.6s;
+}
+.delay-3 {
+  animation-delay: 0.9s;
+}
 
 @keyframes fadeUp {
   to {
@@ -128,9 +127,7 @@
 }
 
 /* ================= RESPONSIVE ================= */
-
 @media (max-width: 992px) {
-
   .hero-content h1 {
     font-size: 2rem;
   }

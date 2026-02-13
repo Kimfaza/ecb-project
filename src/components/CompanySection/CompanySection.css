@@ -9,19 +9,7 @@
   color: #000;
 }
 
-/* .company-logo {
-  max-width: 120px;
-  opacity: 0.8;
-  transition: 0.3s;
-}
-
-.company-logo:hover {
-  opacity: 1;
-  transform: scale(1.05);
-} */
-
 /* ===== SLIDER ===== */
-
 .logo-slider {
   overflow: hidden;
   position: relative;

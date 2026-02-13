@@ -6,9 +6,7 @@ const TestimonialSection = () => {
   return (
     <div className="testimonial-wrapper">
 
-      {/* ===================== */}
       {/* THREE STEPS (OVERLAP) */}
-      {/* ===================== */}
       <div className="steps-wrapper">
         <div className="container">
           <div className="steps-card p-4 p-md-5">
@@ -59,9 +57,7 @@ const TestimonialSection = () => {
         </div>
       </div>
 
-      {/* ===================== */}
       {/* HAPPY CUSTOMERS */}
-      {/* ===================== */}
       <div className="customers-section py-5">
         <div className="container">
           <div className="row align-items-center">
