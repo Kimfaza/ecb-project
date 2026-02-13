@@ -48,7 +48,7 @@ function ValuesSection() {
         <div className="row mt-5">
           {values.map((value, index) => (
             <div className="col-lg-3 col-md-6 mb-4" key={index}>
-              <div className="value-card">
+              <div className="value-card p-4 animate">
                 <div
                   className={`value-icon ${
                     value.active ? "active-icon" : ""

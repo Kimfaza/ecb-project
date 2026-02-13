@@ -84,3 +84,28 @@
   font-size: 30px;
   color: #ff6a00;
 }
+
+/* ===== Scroll Animation Base ===== */
+.animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.animate-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 0.8s ease;
+}
+
+.animate-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: all 0.8s ease;
+}
+
+/* Active state */
+.show {
+  opacity: 1;
+  transform: translate(0);
+}
