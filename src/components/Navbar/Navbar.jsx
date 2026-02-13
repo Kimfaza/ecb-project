@@ -38,11 +38,11 @@ function Navbar() {
             </li>
 
             <li className="nav-item mx-3">
-              <a className="nav-link fw-medium" href="about">About Us</a>
+              <a className="nav-link fw-medium" href="#about">About Us</a>
             </li>
 
             <li className="nav-item mx-3">
-              <a className="nav-link fw-medium" href="service">Service</a>
+              <a className="nav-link fw-medium" href="#service">Service</a>
             </li>
 
             <li className="nav-item ms-3">

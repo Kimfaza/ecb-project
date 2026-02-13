@@ -7,7 +7,7 @@ function About() {
     return (
         <>
         {/* SECTION ABOUT */}
-        <section className="about-section py-5" id="about">
+        <section id="about" className="about-section py-5">
             <div className="container">
 
                 {/* TITLE CENTER */}
