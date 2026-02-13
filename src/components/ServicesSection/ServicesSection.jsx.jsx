@@ -64,7 +64,7 @@ function ServicesSection() {
   };
 
   return (
-    <section className="services-section py-5 text-center">
+    <section id="service" className="services-section py-5 text-center">
       <div className="container">
         <p className="services-subtitle">SERVICES</p>
 
